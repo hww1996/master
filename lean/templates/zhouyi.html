@@ -1,0 +1,17 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>周一</title>
+</head>
+<body>
+        <h1>周一</h1>
+            <ul>
+			<p>周一</p>
+                {% for i in zhouyi %}
+                <li>
+				<a href='{{i.title}}'>{{i.title}}</a><p>{{i.timestamp}}</p>
+				</li>
+                {% endfor %}
+            </ul>
+    </body>
+</html>

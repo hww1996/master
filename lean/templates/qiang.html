@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta charset="utf-8">
+        <title>墙</title>
+    </head>
+
+    <body>
+        <h1>墙</h1>
+	   <li><a href="fatie/">发帖</a></li>
+	   {%for i in qiang%}
+	   <fieldset>
+				<legend>{{i.name}}</legend>				
+				<li>
+				<p>{{i.title}}</p>
+				<p>{{i.author}}</p>
+				<p>{{i.content}}</p>
+				<p>{{i.time}}</p>
+				</li>    
+		</fieldset>
+		{% endfor %}
+    </body>
+</html>
