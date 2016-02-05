@@ -9,8 +9,18 @@ from lean.models import Article
 from lean.models import Music
 from lean.models import Qiang
 from lean.models import UpArticle
+<<<<<<< HEAD
 from lean.models import Reporters
 from lean.models import Program
+=======
+from lean.models import Zhongreporter
+from lean.models import Yingreporter
+from lean.models import Zhouyi
+from lean.models import Zhouer
+from lean.models import Zhousan
+from lean.models import Zhousi
+from lean.models import Zhouwu
+>>>>>>> origin/master
 from lean.forms import MusicForm
 from lean.forms import QiangForm
 from lean.forms import UpArticleForm
@@ -101,11 +111,14 @@ def fatie(request):
     return render(request, 'fatie.html', {'form_info': form})
 
 
+<<<<<<< HEAD
 def detail(request,qiang_id):
     qiang=Qiang.objects.get(id=qiang_id)
     return render_to_response('detail.html',{'qiang_detail':qiang})
 
 
+=======
+>>>>>>> origin/master
 def qiang(request):
     qiang=Qiang.objects.all()
     return render_to_response('qiang.html',{'qiang':qiang})
@@ -139,6 +152,7 @@ def uparticle(request):
     return render(request, 'uparticle.html', {'form_info': form})
 
 #主播
+<<<<<<< HEAD
 def reporter(request,reporter_content):
     context_dict={}
     try:
@@ -163,6 +177,41 @@ def chinese(request):
 #英文
 def english(request):
     yingreporter=Reporters.objects.filter(category='英文主播')
+=======
+#中文主播后台
+def zhongwen(request,zhongreporter_content):
+    context_dict={}
+    try:
+        zhongreporter=Zhongreporter.objects.get(name=zhongreporter_content)
+        context_dict['zhongreporter_content']= zhongreporter.content
+        context_dict['zhongreporter']=zhongreporter
+    except Zhongreporter.DoesNotExist:
+        pass
+    return render(request, 'zhongwen.html', context_dict)
+
+#英文主播后台
+def yingwen(request,yingreporter_content):
+    context_dict={}
+    try:
+        yingreporter=Yingreporter.objects.get(name=yingreporter_content)
+        context_dict['yingreporter_content']= yingreporter.content
+        context_dict['yingreporter']=yingreporter
+    except Yingreporter.DoesNotExist:
+        pass
+    return render(request, 'yingwen.html', context_dict)
+#主播总览
+def zhubo(request):
+    zhongreporter=Zhongreporter.objects.all()
+    yingreporter=Yingreporter.objects.all()
+    return render_to_response('zhubo.html',{'zhongreporter':zhongreporter,'yingreporter':yingreporter})
+#中文
+def chinese(request):
+    zhongreporter=Zhongreporter.objects.all()
+    return render_to_response('chinese.html',{'zhongreporter':zhongreporter})
+#英文
+def english(request):
+    yingreporter=Yingreporter.objects.all()
+>>>>>>> origin/master
     return render_to_response('english.html',{'yingreporter':yingreporter})
 
 #节目
@@ -170,6 +219,7 @@ def jiemu(request):
     return render(request,'jiemu.html')
 #周一
 def mon(request):
+<<<<<<< HEAD
     zhouyi=Program.objects.filter(category='周一')
     return render_to_response('zhouyi.html',{'zhouyi':zhouyi})
 #周二
@@ -200,6 +250,76 @@ def program(request,program_content):
         pass
     return render(request, 'program.html', context_dict)
 
+=======
+    zhouyi=Zhouyi.objects.all()
+    return render_to_response('zhouyi.html',{'zhouyi':zhouyi})
+#周二
+def tue(request):
+    zhouer=Zhouer.objects.all()
+    return render_to_response('zhouer.html',{'zhouer':zhouer})
+#周三
+def wed(request):
+    zhousan=Zhousan.objects.all()
+    return render_to_response('zhousan.html',{'zhousan':zhousan})
+#周四
+def thu(request):
+    zhousi=Zhousi.objects.all()
+    return render_to_response('zhousi.html',{'zhousi':zhousi})
+#周五
+def fir(request):
+    zhouwu=Zhouwu.objects.all()
+    return render_to_response('zhouwu.html',{'zhouwu':zhouwu})
+#周一后台
+def yi(request,zhouyi_content):
+    context_dict={}
+    try:
+        zhouyi=Zhouyi.objects.get(title=zhouyi_content)
+        context_dict['zhouyi_content']= zhouyi.content
+        context_dict['zhouyi']=zhouyi
+    except Zhouyi.DoesNotExist:
+        pass
+    return render(request, 'yi.html', context_dict)
+#周二后台
+def er(request,zhouer_content):
+    context_dict={}
+    try:
+        zhouer=Zhouer.objects.get(title=zhouer_content)
+        context_dict['zhouer_content']= zhouer.content
+        context_dict['zhouer']=zhouer
+    except Zhouer.DoesNotExist:
+        pass
+    return render(request, 'er.html', context_dict)
+#周三后台
+def san(request,zhousan_content):
+    context_dict={}
+    try:
+        zhousan=Zhousan.objects.get(title=zhousan_content)
+        context_dict['zhousan_content']= zhousan.content
+        context_dict['zhousan']=zhousan
+    except Zhouyi.DoesNotExist:
+        pass
+    return render(request, 'san.html', context_dict)
+#周四后台
+def si(request,zhousi_content):
+    context_dict={}
+    try:
+        zhousi=Zhousi.objects.get(title=zhousi_content)
+        context_dict['zhousi_content']= zhousi.content
+        context_dict['zhousi']=zhousi
+    except Zhousi.DoesNotExist:
+        pass
+    return render(request, 'si.html', context_dict)
+#周五后台
+def wu(request,zhouwu_content):
+    context_dict={}
+    try:
+        zhouwu=Zhouwu.objects.get(title=zhouwu_content)
+        context_dict['zhouwu_content']= zhouwu.content
+        context_dict['zhouwu']=zhouwu
+    except Zhouwu.DoesNotExist:
+        pass
+    return render(request, 'wu.html', context_dict)
+>>>>>>> origin/master
 #加入我们
 def jiaru(request):
     return render(request,'jiaru.html')

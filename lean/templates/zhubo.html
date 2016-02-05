@@ -9,6 +9,7 @@
 			<a href='chinese/'>中文主播</a>
 			{% for i in zhongreporter %}
                 <li>
+<<<<<<< HEAD
 				<a href='http://127.0.0.1:8000/zhubo/{{i.name}}'>{{i.name}}</a>
 				</li>
                 {% endfor %}
@@ -16,6 +17,15 @@
 			{% for j in yingreporter %}
                 <li>
 				<a href='http://127.0.0.1:8000/zhubo/{{j.name}}'>{{j.name}}</a>
+=======
+				<a href='chinese/{{i.name}}'>{{i.name}}</a>
+				</li>
+                {% endfor %}
+			<a href='english/'>英文主播</a>
+			{% for i in yingreporter %}
+                <li>
+				<a href='english/{{i.name}}'>{{i.name}}</a>
+>>>>>>> origin/master
 				</li>
                 {% endfor %}
             </ul>

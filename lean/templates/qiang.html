@@ -8,11 +8,18 @@
     <body>
         <h1>墙</h1>
 	   <li><a href="fatie/">发帖</a></li>
+<<<<<<< HEAD
 	   <li><a href="http://127.0.0.1:8000/qiang/">全部</a></li>
 	   <li><a href="http://127.0.0.1:8000/qiang/shiwu/">失物</a></li>
 	   <li><a href="http://127.0.0.1:8000/qiang/biaobai/">表白</a></li>
 	   <li><a href="http://127.0.0.1:8000/qiang/tucao/">吐槽</a></li>
 	   <li><a href="http://127.0.0.1:8000/qiang/huodong/">活动</a></li>
+=======
+	   <li><a href="shiwu/">失物</a></li>
+	   <li><a href="biaobai/">表白</a></li>
+	   <li><a href="tucao/">吐槽</a></li>
+	   <li><a href="huodong/">活动</a></li>
+>>>>>>> origin/master
 	   {%for i in qiang%}
 	   <fieldset>
 				<legend>{{i.name}}</legend>				
@@ -21,9 +28,15 @@
 				<p>{{i.author}}</p>
 				<p>{{i.content}}</p>
 				<p>{{i.time}}</p>
+<<<<<<< HEAD
 				<a href='http://127.0.0.1:8000/qiang/{{i.id}}'>评论</a>
 				</li> 			
 		</fieldset>
 		{%endfor%}
+=======
+				</li>    
+		</fieldset>
+		{% endfor %}
+>>>>>>> origin/master
     </body>
 </html>

@@ -27,7 +27,10 @@ urlpatterns = patterns('',
                        url(r'^try/','lean.views.shi',name='try'),
                        url(r'music/','lean.views.music',name='music'),
                        url(r'qiang/$','lean.views.qiang',name='qiang'),
+<<<<<<< HEAD
                        url(r'qiang/(\d+)/$','lean.views.detail',name='detail'),
+=======
+>>>>>>> origin/master
                        url(r'qiang/fatie/$','lean.views.fatie',name='fatie'),
                        url(r'qiang/shiwu/$','lean.views.shiwu',name='shiwu'),
                        url(r'qiang/biaobai/$','lean.views.biaobai',name='biaobai'),
@@ -37,14 +40,27 @@ urlpatterns = patterns('',
                        url(r'^zhubo/$','lean.views.zhubo',name='zhubo'),
                        url(r'^zhubo/chinese/$','lean.views.chinese',name='chinese'),
                        url(r'^zhubo/english/$','lean.views.english',name='english'),
+<<<<<<< HEAD
                        url(r'^zhubo/(?P<reporter_content>[\w\-]+)$','lean.views.reporter',name='reporter'),
+=======
+                       url(r'^zhubo/chinese/(?P<zhongreporter_content>[\w\-]+)$','lean.views.zhongwen',name='zhongwen'),
+                       url(r'^zhubo/english/(?P<yingreporter_content>[\w\-]+)$','lean.views.yingwen',name='yingwen'),
+>>>>>>> origin/master
                        url(r'^jiemu/$','lean.views.jiemu',name='jiemu'),
                        url(r'^jiemu/mon/$','lean.views.mon',name='mon'),
                        url(r'^jiemu/tue/$','lean.views.tue',name='tue'),
                        url(r'^jiemu/wed/$','lean.views.wed',name='wed'),
                        url(r'^jiemu/thu/$','lean.views.thu',name='thu'),
                        url(r'^jiemu/fir/$','lean.views.fir',name='fir'),
+<<<<<<< HEAD
                        url(r'^jiemu/(?P<program_content>[\w\-]+)$','lean.views.program',name='program'),
+=======
+                       url(r'^jiemu/mon/(?P<zhouyi_content>[\w\-]+)$','lean.views.yi',name='yi'),
+                       url(r'^jiemu/tue/(?P<zhouer_content>[\w\-]+)$','lean.views.er',name='er'),
+                       url(r'^jiemu/wed/(?P<zhousan_content>[\w\-]+)$','lean.views.san',name='san'),
+                       url(r'^jiemu/thu/(?P<zhousi_content>[\w\-]+)$','lean.views.si',name='si'),
+                       url(r'^jiemu/fir/(?P<zhouwu_content>[\w\-]+)$','lean.views.wu',name='wu'),
+>>>>>>> origin/master
                        url(r'^guanyu/$','lean.views.guanyu',name='guanyu'),
                        url(r'^jiaru/$','lean.views.jiaru',name='jiaru'),
                        )

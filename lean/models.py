@@ -40,8 +40,11 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+<<<<<<< HEAD
     class Meta:
         ordering = ['-timestamp']
+=======
+>>>>>>> origin/master
 #这里是点歌的的models
 MUSIC_NUMBER_CHOICES = (
     ('一首', '一首'),
@@ -75,11 +78,16 @@ class Qiang(models.Model):
     content=models.TextField('内容',max_length=140)
     time=models.DateTimeField(auto_now_add=True)
 
+<<<<<<< HEAD
 
     def __str__(self):
         return self.title
     class Meta:
         ordering = ['-time']
+=======
+    def __str__(self):
+        return self.title
+>>>>>>> origin/master
 
 
 #文章投稿
@@ -92,6 +100,7 @@ class UpArticle(models.Model):
         return self.title
 
 #主播
+<<<<<<< HEAD
 Type_choices=(
     ('中文主播','中文主播'),
     ('英文主播','英文主播'),
@@ -101,11 +110,24 @@ class Reporters(models.Model):
     category=models.CharField('类别',choices=Type_choices,blank=False,max_length=4)
     name=models.CharField('姓名',max_length=100,unique=True)
     partner=models.CharField('搭档',max_length=100,unique=True)
+=======
+#中文主播
+class Zhongreporter(models.Model):
+    name=models.CharField('姓名',max_length=100)
+    content = RichTextField('简介')
+
+    def __str__(self):
+        return self.name
+#英文主播
+class Yingreporter(models.Model):
+    name=models.CharField('姓名',max_length=100,unique=True)
+>>>>>>> origin/master
     content = RichTextField('简介')
 
     def __str__(self):
         return self.name
 #节目
+<<<<<<< HEAD
 Program_choice=(
     ('周一','周一'),
     ('周二','周二'),
@@ -128,4 +150,46 @@ class Program(models.Model):
     class Meta:
         ordering = ['-timestamp']
 
+=======
+#周一
+class Zhouyi(models.Model):
+    title=models.CharField('题目',max_length=100,unique=True)
+    author=models.CharField('作者',max_length=50)
+    timestamp = models.DateTimeField('时间')
+    content = RichTextField('内容')
+    def __str__(self):
+        return self.title
+#周二
+class Zhouer(models.Model):
+    title=models.CharField('题目',max_length=100,unique=True)
+    author=models.CharField('作者',max_length=50)
+    timestamp = models.DateTimeField('时间')
+    content = RichTextField('内容')
+    def __str__(self):
+        return self.title
+#周三
+class Zhousan(models.Model):
+    title=models.CharField('题目',max_length=100,unique=True)
+    author=models.CharField('作者',max_length=50)
+    timestamp = models.DateTimeField('时间')
+    content = RichTextField('内容')
+    def __str__(self):
+        return self.title
+#周四
+class Zhousi(models.Model):
+    title=models.CharField('题目',max_length=100,unique=True)
+    author=models.CharField('作者',max_length=50)
+    timestamp = models.DateTimeField('时间')
+    content = RichTextField('内容')
+    def __str__(self):
+        return self.title
+#周五
+class Zhouwu(models.Model):
+    title=models.CharField('题目',max_length=100,unique=True)
+    author=models.CharField('作者',max_length=50)
+    timestamp = models.DateTimeField('时间')
+    content = RichTextField('内容')
+    def __str__(self):
+        return self.title
+>>>>>>> origin/master
 

@@ -39,7 +39,10 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'lean',
     'ckeditor',
+<<<<<<< HEAD
     #'duoshuo',
+=======
+>>>>>>> origin/master
 )
 
 MIDDLEWARE_CLASSES = (
