@@ -1,0 +1,17 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>英文主播</title>
+</head>
+<body>
+        <h1>英文主播</h1>
+            <ul>
+			<p>英文主播</p>
+                {% for i in yingreporter %}
+                <li>
+				<a href='http://127.0.0.1:8000/zhubo/{{i.name}}'>{{i.name}}</a>
+				</li>
+                {% endfor %}
+            </ul>
+    </body>
+</html>

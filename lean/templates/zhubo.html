@@ -1,0 +1,23 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>主播</title>
+</head>
+<body>
+        <h1>主播</h1>
+            <ul>
+			<a href='chinese/'>中文主播</a>
+			{% for i in zhongreporter %}
+                <li>
+				<a href='http://127.0.0.1:8000/zhubo/{{i.name}}'>{{i.name}}</a>
+				</li>
+                {% endfor %}
+			<a href='english/'>英文主播</a>
+			{% for j in yingreporter %}
+                <li>
+				<a href='http://127.0.0.1:8000/zhubo/{{j.name}}'>{{j.name}}</a>
+				</li>
+                {% endfor %}
+            </ul>
+    </body>
+</html>

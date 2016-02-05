@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>首页</title>
+    </head>
+
+    <body>
+        <h1>My Site</h1>
+
+        {% if categories %}
+            <ul>
+                {% for category in categories %}
+                <li><a href="category/{{ category.slug }}">{{ category.name }}</a></li>
+                {% endfor %}
+            </ul>
+       {% else %}
+            <strong>There are no categories present.</strong>
+       {% endif %}
+	   <li><a href="dajia/">腾讯大家</a></li>
+	   <li><a href="register/">上传文件</a></li>
+	   <li><a href="blog/">文章区</a></li>
+	   <li><a href="music/">音乐上传</a></li>
+	   <li><a href="qiang/">墙</a></li>
+	   <li><a href="uparticle/">投稿</a></li>
+	   <li><a href="zhubo/">主播</a></li>
+	   <li><a href="jiemu/">节目</a></li>
+	   <li><a href="jiaru/">加入我们</a></li>
+	   <li><a href="guanyu/">关于</a></li>
+{% load staticfiles %}
+<img src="{%static "my_picture/rango.jpg"%}" alt="小埋"  >
+    </body>
+</html>
